@@ -1,0 +1,555 @@
+<html>
+    <head>
+        <title>Belajar WEBGIS</title>
+        <!-- LEAFLET CSS -->
+        <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>
+        <style>
+            #map{
+                width: 100%;
+                height: 100vh;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="map"></div>
+    </body>
+</html>
+<!-- LEAFLET JAVASCRIPT -->
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+<script>
+    //LOKASI KAJIAN 
+    var map = L.map('map').setView([-5.367016, 105.317890], 15);
+
+    //BASEMAP OPENSTREETMAP
+    var osm = L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+     attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+     });
+     osm.addTo(map);
+     //BASEMAP ESRI
+    var Esri_WorldImagery = L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', {
+    attribution: 'Tiles &copy; Esri &mdash; Source: Esri, i-cubed, USDA, USGS, AEX, GeoEye, Getmapping, Aerogrid, IGN, IGP, UPR-EGP, and the GIS User Community'
+    });
+    Esri_WorldImagery.addTo(map);
+    //<!-- POSISI GEDUNG  C -->
+    //L.marker([-5.3581344456983775, 105.31287246214416]).addTo(map);
+
+    //<!-- POSISI GEDUNG Gedung E -->
+    //L.marker([-5.359962058751944, 105.31488712338555]).addTo(map);
+
+    //<!-- POSISI Masjid Baitul Ilmi -->
+    //L.marker([-5.359080076361198, 105.31265864398368]).addTo(map);
+
+    //<!-- POSISI GKU 2 -->
+    //L.marker([-5.360422045443905, 105.31357276239092]).addTo(map);
+
+    //<!-- POSISI GKU 1-->
+    //L.marker([-5.360542614186739, 105.31067636425495]).addTo(map);
+
+    //<!-- POSISI LABTEK 1 -->
+    //L.marker([-5.360308862645899, 105.3104182263382]).addTo(map);
+
+    //<!--POSISI LABTEK 2 -->
+    //L.marker([-5.361355210440674, 105.31097782018011]).addTo(map);
+
+    //<!-- POSISI LABTEK 3 -->
+    //L.marker([-5.3603871958216125, 105.30911526267525]).addTo(map);
+
+    //<!-- POSISI LABTEK 4 -->
+    //L.marker([-5.361076565099762, 105.31706638637719]).addTo(map);
+
+    //<!-- POSISI LABTEK OZT-->
+    //L.marker([-5.362094352068201, 105.31083434724309]).addTo(map);
+
+    //<!-- POSISI Gedung A -->
+    //L.marker([-5.3578663237822415, 105.31440302190195]).addTo(map);
+
+    //<!-- POSISI Gedung B-->
+    //L.marker([-5.35777679549714, 105.3153578988858]).addTo(map);
+
+    //<!-- POSISI Gedung D-->
+    //L.marker([-5.35827227218791, 105.3133549067466]).addTo(map);
+
+    //<!-- POSISI Gedung F-->
+    //L.marker([-5.361184498191155, 105.3136428711644]).addTo(map);
+
+    //<!-- POSISI Masjid At-Tanwir-->
+    //L.marker([-5.356402827935222, 105.31883396198985]).addTo(map);
+
+    //<!-- POSISI Asrama ITERA TB 1-->
+    //L.marker([-5.358360136507029, 105.31724833489703]).addTo(map);
+
+    //<!-- POSISI Asrama ITERA TB 2-->
+    //L.marker([-5.358328939657022, 105.31938686497882]).addTo(map);
+
+    //<!-- POSISI Asrama ITERA TB 3 -->
+    //L.marker([-5.358952876354504, 105.31909702756846]).addTo(map);
+
+    //<!-- POSISI Asrama ITERA TB 4-->
+    //L.marker([-5.359007470785211, 105.31756950608148]).addTo(map);
+
+    //<!-- POSISI Asrama ITERA TPB -->
+    //L.marker([-5.358544562429244, 105.3184785719528]).addTo(map);
+
+    //<!-- POSISI Kebun Raya ITERA-->
+    //L.marker([-5.367345551952399, 105.3104220472755]).addTo(map);
+
+    //<!-- POSISI Taman Alat UPT MKG ITERA -->
+    //L.marker(-5.362166296778117, 105.31269560150818).addTo(map);
+
+    //<!-- POSISI Pembangkit Listrik Tenaga Surya-->
+    //L.marker([-5.360453419016434, 105.31161828558618]).addTo(map);
+
+    //<!-- POSISI Rumah Ibadah Multi Agama RIMA ITERA -->
+    //L.marker([-5.358350241783858, 105.32214718330758]).addT(map);
+
+    //<!-- POSISI Embung A-->
+    //L.marker([-5.356464817492713, 105.31348718701699]).addTo(map);
+
+    //<!-- POSISI Embung B-->
+    //L.marker([-5.357960735447163, 105.3085102193401]).addTo(map);
+
+    //<!-- POSISI Embung C-->
+    //L.marker([-5.358918430524621, 105.31415473307734]).addTo(map);
+
+    //<!-- POSISI Embung D-->
+    //L.marker([-5.359990252866179, 105.32035742480028]).addTo(map);
+
+    //<!-- POSISI Embung E -->
+    //L.marker([-5.3645010712534535, 105.316447415692]).addTo(map);
+
+    //<!-- POSISI Embung F-->
+    //L.marker([-5.3681776726641, 105.31948853385803]).addTo(map);
+
+    //<!-- POSISI Embung Pulau Sumatera -->
+    //L.marker([-5.3702865817549466, 105.31035337441988]).addTo(map);
+
+    //<!-- POSISI Taman Labirin ITERA -->
+    //L.marker([-5.369550132280896, 105.31192908692287]).addTo(map);
+
+    //<!-- Posisi Perpustakaan ITERA -->
+    //L.marker([-5.369550132280896, 105.31192908692287]).addTo(map);
+
+    //<!-- Posisi Integrated Waste - Agro Center ITERA -->
+    //L.marker([-5.360973777204009, 105.32137170150914]).addTo(map);
+
+    //<!-- POSISI Galeri 2 ITERA -->
+    //L.marker([-5.3607497966725575, 105.30882758128102]).addTo(map);
+
+    //<!-- POSISI Galeri ITERA -->
+    //L.marker([-5.358008662112641, 105.31560716697817]).addTo(map);
+
+    //<!-- POSISI Poliklinik ITERA-->
+    //L.marker([-5.357673356872377, 105.3160212775001]).addTo(map);
+
+    //<!-- POSISI KANTIN BKL ITERA -->
+    //L.marker([-5.35789192623918, 105.31653766836276]).addTo(map);
+
+    //<!-- POSISI ATM Center ITERA -->
+    //L.marker([-5.357478779473764, 105.31510206984967]).addTo(map);
+
+    //<!-- POSISI Gedung Itera International Office-->
+    //L.marker([-5.35801455564936, 105.31443012294719]).addTo(map);
+
+    //<!-- POSISI Lapangan Sepak Bola ITERA-->
+    //L.marker([-5.362859761497414, 105.32018002126438]).addTo(map);
+
+    //<!-- POSISI Lapangan Tennis ITERA-->
+    //L.marker([-5.36264875366837, 105.31949319561268]).addTo(map);
+
+    //<!-- POSISI Lapangan BASEBALL ITERA-->
+    //L.marker([-5.393569265788139, 105.30674727731679]).addTo(map);
+
+    //<!-- POSISI Lapangan Basket ITERA -->
+    //L.marker([-5.358514526360452, 105.31154869999999]).addTo(map);
+
+    //<!-- POSISI Lapangan Voli ITERA -->
+    //L.marker([-5.358762901509828, 105.31174164045028]).addTo(map);
+
+    //<!-- Papan Panjat Tebing ITERA-->
+    //L.marker([-5.358419463319637, 105.31224460595632]).addTo(map);
+
+    //<!-- BUNDARAN YANG SERING SAYA LANGGAR ATURAN SAAT BERLALU LINTAS DI ITERA Bundaran Gedung F -->
+    var bundaran = L.circle([ -5.363156, 105.312634], {
+        color: 'red',
+        fillColor: '#f03',
+        fillOpacity: 0.5,
+        radius: 200
+    }).addTo(map);
+
+    //<!-- BUNDARAN INI JUGA SERING SAYA LANGGAR SETELAH SELESAI KULIAH DI GKU 2 -->
+    var bundaran1 = L.circle([-5.360813, 105.314847], {
+        color: 'green',
+        fillColor: '#ffffff',
+        fillOpacity: 0.5,
+        radius: 1000 
+    }).addTo(map);
+
+    //<!-- BUNDARAN ASRAMA  -->
+    var bundaran2 = L.circle([ -5.3582031519691835, 105.3168459504049 ], {
+        color: 'Blue',
+        fillColor: '#0000FF',
+        fillOpacity: 0.5,
+        radius: 100
+    }).addTo(map); 
+
+    //<!-- BUNDARAN Dekat Kebun Raya  -->
+    var bundaran3 = L.circle([-5.363067517447241, 105.31122920788572], {
+        color: 'lilac',
+        fillColor: '#c8a2c8',
+        fillOpacity: 0.5,
+        radius: 150 
+    }).addTo(map); 
+
+    //<!-- BUNDARAN TSE  -->
+    var bundaran4 = L.circle([-5.363230369064004, 105.31839108479171 ], {
+        color: 'PINK',
+        fillColor: '#FFB6C1',
+        fillOpacity: 0.5,
+        radius: 100
+    }).addTo(map);
+
+    //<!-- POLIGON BANGUNAN  GEDUNG F -->
+    var polygon = L.polygon([
+        [-5.359799, 105.315831],
+        [-5.359957, 105.315831],
+        [-5.359957, 105.315571],
+        [-5.360474, 105.315571],
+        [-5.360474, 105.315401],
+        [-5.359635, 105.315401],
+        [-5.359635, 105.315571],
+        [-5.359799, 105.315571]
+    ]).addTo(map);
+
+    //<!-- MENAMPILKAN NAMA GEDUNG C -->
+    var GedungC = L.marker([-5.3581344456983775, 105.31287246214416]);
+    //var namagedungc = GedungC.bindPopup("GedungC").openPopup()
+    //namagedungc.addTo(map);
+
+    //<!-- MENAMPILKAN NAMA GEDUNG E  -->
+    var gedungE = L.marker([-5.359962058751944, 105.31488712338555]);
+    //var namagedungE = gedungE.bindPopup("Gedung E").openPopup()
+    //namagedungE.addTo(map);
+
+    //<!-- MENAMPILKAN NAMA Gedung Baitul ILMI -->
+    var baim = L.marker([-5.359080076361198, 105.31265864398368]);
+    //var baimG= baim.bindPopup("Gedung E").openPopup()
+    //baimG.addTo(map);
+
+    //<!-- Menampilkan Nama Gedung GK 2 -->
+    var GK2 = L.marker([-5.360422045443905, 105.31357276239092]);
+    //var GKU2= GK2.bindPopup("Gedung GKU 2").openPopup()
+    //GKU2.addTo(map);
+
+    //<!-- Tampil Nama  GKU 1-->
+    var GK1 = L.marker([-5.360542614186739, 105.31067636425495]);
+    //var GKU1= GK1.bindPopup("Gedung GKU 1").openPopup()
+    //GKU1.addTo(map);
+
+    //<!-- Tampil Nama Labtek 1-->
+    var LABTEK1 = L.marker([-5.360308862645899, 105.3104182263382]);
+    //var LABTEK_1= LABTEK1.bindPopup("Gedung LABTEK 1").openPopup()
+    //LABTEK_1.addTo(map);
+
+    //<!-- Tampil Nama LABTEK 2 -->
+    var LABTEK2 = L.marker([-5.361355210440674, 105.31097782018011]);
+    //var LABTEK_2= LABTEK2.bindPopup("Gedung LABTEK 2").openPopup()
+    //LABTEK_2.addTo(map);
+
+    //<!-- Tampil Nama LABTEK 3 --> 
+    var LABTEK3 = L.marker([-5.3603871958216125, 105.30911526267525]);
+    //var LABTEK_3= LABTEK3.bindPopup("Gedung LABTEK 3").openPopup()
+    //LABTEK_3.addTo(map);
+
+    //<!-- Tampil Nama LABTEK 4 -->
+    var LABTEK4 = L.marker([-5.361076565099762, 105.31706638637719]);
+    //var LABTEK_4= LABTEK4.bindPopup("Gedung LABTEK 4").openPopup()
+    //LABTEK_4.addTo(map);
+
+    //<!-- Tampil Nama LABTEK OZT-->
+    var LABTEK5 = L.marker([-5.362094352068201, 105.31083434724309]);
+    //var LABTEK_5= LABTEK5.bindPopup("Gedung LABTEK OZT").openPopup()
+    //LABTEK_5.addTo(map);
+
+    //<!--Tampil Nama Gedung A -->
+    var GedungA = L.marker([-5.3578663237822415, 105.31440302190195]);
+    //var Gedung_A= GedungA.bindPopup("Gedung A").openPopup()
+    //Gedung_A.addTo(map);
+
+    //<!-- Tampil Nama Gedung B-->
+    var GedungB = L.marker([-5.35777679549714, 105.3153578988858]);
+    //var Gedung_B= GedungB.bindPopup("Gedung B").openPopup()
+    //Gedung_B.addTo(map);
+
+    //<!-- Tampil Nama Gedung D-->
+    var GedungD = L.marker([-5.35827227218791, 105.3133549067466]);
+    //var Gedung_D= GedungD.bindPopup("Gedung D").openPopup()
+    //Gedung_D.addTo(map);
+
+    //<!-- Tampil Nama Gedung F-->
+    var GedungF = L.marker([-5.361184498191155, 105.3136428711644]);
+    //var Gedung_F= GedungF.bindPopup("Gedung F").openPopup()
+    //Gedung_F.addTo(map);
+
+    //<!-- Tampil Nama Masjid At-Tanwir-->
+    var Mtw = L.marker([-5.356402827935222, 105.31883396198985]);
+    //var mtwr= Mtw.bindPopup("Masjid At-Tanwir").openPopup()
+    ///mtwr.addTo(map);
+
+    //<!-- Tampil Nama Asrama ITERA TB 1-->
+    var Asrama1 = L.marker([-5.358360136507029, 105.31724833489703]);
+    //var Asrama_1= Asrama1.bindPopup("Asrama TB 1").openPopup()
+    //Asrama_1.addTo(map);
+
+    //<!-- Tampil Nama  Asrama ITERA TB 2-->
+    var Asrama2 = L.marker([-5.358328939657022, 105.31938686497882]);
+    //var Asrama_2= Asrama2.bindPopup("Asrama TB 2").openPopup()
+    //Asrama_2.addTo(map);
+
+    //<!-- Tampil Nama Asrama ITERA TB 3 -->
+    var Asrama3 = L.marker([-5.358952876354504, 105.31909702756846]);
+    //var Asrama_3= Asrama3.bindPopup("Asrama TB 3").openPopup()
+    //Asrama_3.addTo(map);
+
+    //<!-- Tampil Nama Asrama ITERA TB 4-->
+    var Asrama4 =  L.marker([-5.359007470785211, 105.31756950608148]);
+    //var Asrama_4= Asrama4.bindPopup("Asrama TB 4").openPopup()
+    //Asrama_4.addTo(map);
+
+    //<!-- Tampil Nama Asrama ITERA TPB -->
+    var Asrama5 =  L.marker([-5.358544562429244, 105.3184785719528]);
+    //var Asrama_5= Asrama5.bindPopup("Asrama TPB").openPopup()
+    //Asrama_5.addTo(map);
+
+    //<!-- Tampil Nama Kebun Raya ITERA-->
+    var kbr =  L.marker([-5.367345551952399, 105.3104220472755]);
+    //var kbr_I= kbr.bindPopup("Kebun Raya ITERA").openPopup()
+    //kbr_I.addTo(map);
+
+    //<!-- Tampil Nama Taman Alat UPT MKG ITERA -->
+    var TAM =  L.marker(-5.362166296778117, 105.31269560150818);
+    //var TAM_I= TAM.bindPopup("Taman Alat UPT MKG ITERA").openPopup()
+    //TAM_I.addTo(map);
+
+    //<!-- Tampil Nama Pembangkit Listrik Tenaga Surya-->
+    var PLTS =  L.marker([-5.360453419016434, 105.31161828558618]);
+    //var PLTS_I= PLTS.bindPopup("PLTS ITERA").openPopup()
+    //PLTS_I.addTo(map);
+
+    //<!-- Tampil Nama Rumah Ibadah Multi Agama RIMA ITERA -->
+    var RIMA =  L.marker([-5.358350241783858, 105.32214718330758]);
+    //var RIMA_I= RIMA.bindPopup("RIMA ITERA").openPopup()
+    //RIMA_I.addTo(map);
+
+    //<!-- Tampil Nama Embung A-->
+    var EmbungA = L.marker([-5.356464817492713, 105.31348718701699]);
+    //var Embung_A= EmbungA.bindPopup("Embung A ITERA").openPopup()
+    //Embung_A.addTo(map);
+
+    //<!-- Tampil Nama Embung B-->
+    var EmbungB = L.marker([-5.357960735447163, 105.3085102193401]);
+    //var Embung_B= EmbungB.bindPopup("Embung B ITERA").openPopup()
+    //Embung_B.addTo(map);
+
+    //<!-- Tampil Nama Embung C-->
+    var EmbungC = L.marker([-5.358918430524621, 105.31415473307734]);
+    //var Embung_C= EmbungC.bindPopup("Embung C ITERA").openPopup()
+    //Embung_C.addTo(map);
+
+    //<!-- Tampil Nama Embung D-->
+    var EmbungD = L.marker([-5.359990252866179, 105.32035742480028]);
+    //var Embung_D= EmbungD.bindPopup("Embung D ITERA").openPopup()
+    //Embung_D.addTo(map);
+
+    //<!-- Tampil Nama Embung E -->
+    var EmbungE =  L.marker([-5.3645010712534535, 105.316447415692]);
+    //var Embung_E= EmbungE.bindPopup("Embung E ITERA").openPopup()
+    //Embung_E.addTo(map);
+
+    //<!-- Tampil Nama Embung F-->
+    var EmbungF =  L.marker([-5.3681776726641, 105.31948853385803]);
+    //var Embung_F= EmbungF.bindPopup("Embung F ITERA").openPopup()
+    //Embung_F.addTo(map);
+
+    //<!-- Tampil Nama Embung Pulau Sumatera -->
+    var EmbungPS =  L.marker([-5.3702865817549466, 105.31035337441988]);
+    //var Embung_PS= EmbungPS.bindPopup("Embung Pulau Sumatera ITERA").openPopup()
+    //Embung_PS.addTo(map);
+
+    //<!-- Tampil Nama Taman Labirin ITERA -->
+    var TL =  L.marker([-5.3702865817549466, 105.31035337441988]);
+    //var TL_I= TL.bindPopup("Taman Labirin ITERA").openPopup()
+    //TL_I.addTo(map);
+
+    //<!-- Tampil Nama Perpustakaan ITERA -->
+    var Perpus = L.marker([-5.369550132280896, 105.31192908692287]);
+    //var Perpus_I= Perpus.bindPopup("Perpustakaan ITERA").openPopup()
+    //Perpus_I.addTo(map);
+    
+    //<!-- Tampil Nama Integrated Waste - Agro Center ITERA -->
+    var IWACI = L.marker([-5.360973777204009, 105.32137170150914]);
+    //var IWACI_I= IWACI.bindPopup("Integrated Waste - Agro Center ITERA").openPopup()
+    //IWACI_I.addTo(map);
+
+    //<!-- Tampil Nama Galeri 2 ITERA -->
+    var Galeri2 = L.marker([-5.3607497966725575, 105.30882758128102]);
+    //var Galeri_2= Galeri2.bindPopup("Galeri 2 ITERA").openPopup()
+    //Galeri_2.addTo(map);
+
+    //<!-- Tampil Nama Galeri ITERA -->
+    var Galeri = L.marker([-5.358008662112641, 105.31560716697817]);
+    //var Galeri_I= Galeri.bindPopup("Galeri  ITERA").openPopup()
+    //Galeri_I.addTo(map);
+
+    //<!-- Tampil Nama Poliklinik ITERA--> 
+    var Poli = L.marker([-5.357673356872377, 105.3160212775001]);
+    //var Poli_I= Poli.bindPopup("Poliklinik ITERA").openPopup()
+    //Poli_I.addTo(map);
+
+    //<!-- Tampil Nama KANTIN BKL ITERA -->
+    var bkl = L.marker([-5.35789192623918, 105.31653766836276]);
+    //var bkl_I= bkl.bindPopup("Kantin BKL ITERA").openPopup()
+    //bkl_I.addTo(map);
+
+    //<!-- Tampil Nama ATM Center ITERA -->
+    var atm = L.marker([-5.357478779473764, 105.31510206984967]);
+    //var atm_I= bkl.bindPopup("ATM Center ITERA").openPopup()
+    //atm_I.addTo(map);
+
+    //<!-- Tampil Nama Gedung Itera International Office-->
+    var IIO = L.marker([-5.35801455564936, 105.31443012294719]);
+    //var IIO_I= IIO.bindPopup("Gedung Itera International Office").openPopup()
+    //IIO_I.addTo(map);
+
+    //<!-- Tampil Nama Lapangan Sepak Bola ITERA-->
+    var sb = L.marker([-5.362859761497414, 105.32018002126438]);
+    //var sb_I= sb.bindPopup("Lapangan Sepak Bola ITERA").openPopup()
+    //sb_I.addTo(map);
+
+    //<!-- Tampil Nama Lapangan Tennis ITERA-->
+    var ten = L.marker([-5.36264875366837, 105.31949319561268]);
+    //var ten_I= ten.bindPopup("Lapangan Tennis ITERA").openPopup()
+    //ten_I.addTo(map);
+
+    //<!-- Tampil Nama Lapangan BASEBALL ITERA--> 
+    var base = L.marker([-5.393569265788139, 105.30674727731679]);
+    //var base_I= base.bindPopup("Lapangan Baseball ITERA").openPopup()
+    //base_I.addTo(map);
+
+    //<!-- POSISI Lapangan Basket ITERA -->
+    var bas =  L.marker([-5.358514526360452, 105.31154869999999]);
+    //var bas_I= bas.bindPopup("Lapangan Basket ITERA").openPopup()
+    //bas_I.addTo(map);
+
+    //<!-- POSISI Lapangan Voli ITERA -->
+    var vol = L.marker([-5.358762901509828, 105.31174164045028]);
+    //var vol_I= vol.bindPopup("Lapangan voli ITERA").openPopup()
+    //vol_I.addTo(map);
+
+    //<!-- Papan Panjat Tebing ITERA-->
+    var pt = L.marker([-5.358419463319637, 105.31224460595632]);
+    //var pt_I= pt.bindPopup("Panjat Tebing ITERA").openPopup()
+    //pt_I.addTo(map);
+
+    var baseMaps = {
+        "OSM":osm,
+        "ESRI":Esri_WorldImagery,
+    };
+    var overlayMaps = {
+        "Gedung C":GedungC,
+        "Gedung E":gedungE,
+        "Masjid Baitul Ilmi ITERA":baim,
+        "GKU 2":GK2,
+        "GKU 1":GK1,
+        "Labtek TPB":LABTEK1,
+        "Labtek 2":LABTEK2,
+        "Labtek 3":LABTEK3,
+        "Labtek 4":LABTEK4,
+        "Labtek OZT":LABTEK5,
+        "Gedung A":GedungA,
+        "Gedung B":GedungB,
+        "Gedung D":GedungD,
+        "Gedung F":GedungF,
+        "Masjid At-Tanwir ITERA": Mtw,
+        "Asrama TB 1":Asrama1,
+        "Asrama TB 2":Asrama2,
+        "Asrama TB 3":Asrama3,
+        "Asrama TB 4":Asrama4,
+        "Asrama TPB":Asrama5,
+        "Kebun Raya ITERA":kbr,
+        "Taman Alat UPT MKG ITERA":TAM,
+        "PLTS ITERA":PLTS,
+        "Rumah Ibadah Multi Agama ( RIMA )ITERA ":RIMA,
+        "Embung A":EmbungA,
+        "Embung B":EmbungB,
+        "Embung C":EmbungC,
+        "Embung D":EmbungD,
+        "Embung E":EmbungE,
+        "Embung F":EmbungF,
+        "Embung Pulau Sumatera":EmbungPS,
+        "Taman Labirin ITERA":TL,
+        "Perpustakaan ITERA":Perpus,
+        "Integrated Waste Center Agro ITERA":IWACI,
+        "Galeri 2":Galeri2,
+        "Galeri 1":Galeri,
+        "Poliklinik ITERA":Poli,
+        "Kantin BKL":bkl,
+        "ATM Center ITERA":atm,
+        "Itera International Office":IIO,
+        "Lapangan Sepak Bola ITERA":sb,
+        "Lapangan Tennis ITERA":ten,
+        "Lapangan Baseball ITERA":base,
+        "Lapangan Basket ITERA":bas,
+        "Lapangan Voli ITERA":vol,
+        "Papan Panjat Tebing ITERA":pt,
+    };
+    map.removeLayer(GedungA)
+    map.removeLayer(GedungC)
+    map.removeLayer(gedungE)
+    map.removeLayer(baim)
+    map.removeLayer(GK2)
+    map.removeLayer(GK1)
+    map.removeLayer(LABTEK1)
+    map.removeLayer(LABTEK2)
+    map.removeLayer(LABTEK3)
+    map.removeLayer(LABTEK4)
+    map.removeLayer(LABTEK5)
+    map.removeLayer(GedungA)
+    map.removeLayer(GedungB)
+    map.removeLayer(GedungD)
+    map.removeLayer(GedungF)
+    map.removeLayer(Mtw)
+    map.removeLayer(Asrama1)
+    map.removeLayer(Asrama2)
+    map.removeLayer(Asrama3)
+    map.removeLayer(Asrama4)
+    map.removeLayer(Asrama5)
+    map.removeLayer(kbr)
+    map.removeLayer(TAM)
+    map.removeLayer(PLTS)
+    map.removeLayer(RIMA)
+    map.removeLayer(EmbungA)
+    map.removeLayer(EmbungB)
+    map.removeLayer(EmbungC)
+    map.removeLayer(EmbungD)
+    map.removeLayer(EmbungE)
+    map.removeLayer(EmbungF)
+    map.removeLayer(EmbungPS)
+    map.removeLayer(TL)
+    map.removeLayer(Perpus)
+    map.removeLayer(IWACI)
+    map.removeLayer(Galeri2)
+    map.removeLayer(Galeri)
+    map.removeLayer(Poli)
+    map.removeLayer(bkl)
+    map.removeLayer(atm)
+    map.removeLayer(IIO)
+    map.removeLayer(sb)
+    map.removeLayer(ten)
+    map.removeLayer(base)
+    map.removeLayer(bas)
+    map.removeLayer(vol)
+    map.removeLayer(pt)
+    //map.removeLayer(polygon)
+    L.control.layers(baseMaps,overlayMaps, {collapsed : false}).addTo(map);
+</script>
+
